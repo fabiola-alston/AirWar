@@ -29,4 +29,9 @@ public class Avion : MonoBehaviour
 
     }
 
+    public void Estrellar()
+    {
+
+    }
+
 }
