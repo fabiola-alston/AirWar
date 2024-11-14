@@ -6,13 +6,18 @@ public class Bateria : MonoBehaviour
 {
     public GameObject bulletPrefab;
     private GameObject currentBullet;
-    private float speed = 10.0f;
+    private float speed = 5.0f;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && currentBullet == null)
+        if (Input.GetKey(KeyCode.Space))
         {
-            Debug.Log("Space bar pressed. Position: " + transform.position);
+            speed += 0.01f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space) && currentBullet == null)
+        {
+            Debug.Log("Space bar released. Position: " + transform.position);
             currentBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         }
 
@@ -29,7 +34,8 @@ public class Bateria : MonoBehaviour
         if (!IsOnScreen(currentBullet))
         {
             Destroy(currentBullet);
-            currentBullet = null;   
+            currentBullet = null;
+            speed = 5.0f;
         }
     }
 
