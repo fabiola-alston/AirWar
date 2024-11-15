@@ -7,7 +7,7 @@ public class GameTimer : MonoBehaviour
 {
     public Text timerText;
     public Text gameOverText;
-    private float startTime = 5f;
+    private float startTime = 120f;
 
     private float timeRemaining;
     private bool timerRunning = true;
