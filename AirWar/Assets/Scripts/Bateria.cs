@@ -17,7 +17,6 @@ public class Bateria : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space) && currentBullet == null)
         {
-            Debug.Log("Space bar released. Position: " + transform.position);
             currentBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         }
 
