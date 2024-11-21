@@ -12,7 +12,7 @@ public class Bateria : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            speed += 0.01f;
+            speed += 0.02f;
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && currentBullet == null)
